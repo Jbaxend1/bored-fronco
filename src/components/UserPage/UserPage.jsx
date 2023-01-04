@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import { Box } from '@mui/system';
+import { Box, maxWidth } from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 
 function UserPage() {
@@ -15,11 +15,16 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   return (
     <div className="container">
-      <h2>Welcome, {user.username}!</h2>
-      <div>
+      <h2 style={{ display: 'flex', justifyContent: 'center'}}>Welcome, {user.username}!</h2>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '12px' }}>
+        <div>
         <Avatar variant="circular" src={user.profile_pic} sx={{ width: 135, height: 135, marginBottom: 3 }} />
+        </div>
+        <div>
+        <Typography variant='h3' sx={{ paddingLeft: 12}}>Let's get started by adding a pony to your stable!</Typography>
+        </div>
       </div>
-      <div style={{ paddingBottom: '25px'}}>
+      <div style={{ paddingBottom: '25px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
         <Card className="card" elevation="15" sx={{ backgroundColor: 'rgb(222, 222, 222)', borderRadius: '67px' }}>
           <CardActionArea>
             <Box sx={{ position: 'relative' }}>
