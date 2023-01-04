@@ -49,7 +49,7 @@ function UserPage() {
       </div>
       <LogOutButton className="btn" />
       <Divider variant="middle" >
-        <Chip label="Your Bronco" variant="contained" sx={{ color: "black", backgroundColor: 'whitesmoke', fontSize: '18px' }} />
+        <Chip label="Your Stable" variant="contained" sx={{ color: "black", backgroundColor: 'whitesmoke', fontSize: '18px' }} />
       </Divider>
     </div>
   );
