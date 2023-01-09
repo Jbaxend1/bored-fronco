@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 import './App.css';
+import AddVehicle from '../AddVehicle/AddVehicle';
 
 function App() {
   const dispatch = useDispatch();
@@ -94,6 +95,10 @@ function App() {
               // Otherwise, show the registration page
               <RegisterPage />
             }
+          </Route>
+          
+          <Route exact path="/add-vehicle">
+            <AddVehicle />
           </Route>
 
           <Route
