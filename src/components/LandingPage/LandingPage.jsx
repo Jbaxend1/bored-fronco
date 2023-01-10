@@ -16,11 +16,13 @@ function LandingPage() {
 
   return (
     <div className="container">
+      <img src={"/public/images/logo.png"} width='200' height={'200'} alt='Bored Fronco Logo' />
+
       <h2>{heading}</h2>
       <p>A place where Bronco enthusiasts can come together to track and share their modifications and ownership journey.</p>
       <div className="grid">
         <div className="grid-col grid-col_8">
-        <img src='https://images.unsplash.com/photo-1641755894668-04516e1ee69e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2375&q=80' />
+          <img src='https://images.unsplash.com/photo-1641755894668-04516e1ee69e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2375&q=80' />
         </div>
         <div className="grid-col grid-col_4">
           <RegisterForm />

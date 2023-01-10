@@ -33,7 +33,7 @@ function UserPage() {
         </div>
       </div>
       <div style={{ paddingBottom: '25px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-        <Card className="card" elevation="15" sx={{ backgroundColor: 'rgb(222, 222, 222)', borderRadius: '67px' }}>
+        <Card className="card" elevation={15} sx={{ backgroundColor: 'rgb(222, 222, 222)', borderRadius: '67px' }}>
           <CardActionArea onClick={handleClick}>
             <Box sx={{ position: 'relative' }}>
               <CardMedia

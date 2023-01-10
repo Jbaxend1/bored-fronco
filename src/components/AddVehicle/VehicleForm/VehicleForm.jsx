@@ -16,7 +16,7 @@ function VehicleForm() {
     const [trim, setTrim] = useState('');
 
     return (
-        <Box sx={{ }}>
+        <Box sx={{}}>
             <FormControl sx={{ minWidth: 500, m: 1 }}>
                 <InputLabel id="year-input">Year</InputLabel>
                 <Select
@@ -30,10 +30,10 @@ function VehicleForm() {
                     <MenuItem value="2022">2022</MenuItem>
                     <MenuItem value="2023">2023</MenuItem>
                 </Select>
-                
+
             </FormControl>
             <FormControl sx={{ minWidth: 500, m: 1 }}>
-            <InputLabel id="trim-input">Trim</InputLabel>
+                <InputLabel id="trim-input">Trim</InputLabel>
                 <Select
                     labelId="trim-input"
                     id="trim-select"
@@ -49,12 +49,12 @@ function VehicleForm() {
                     <MenuItem value="wild-trak">Wild Trak</MenuItem>
                     <MenuItem value="everglades">Everglades</MenuItem>
                     <MenuItem value="first-edition">First Edition</MenuItem>
-                
+
                 </Select>
             </FormControl>
             <FormControl sx={{ minWidth: 500, m: 1 }}>
-            <FormLabel id='door-configuration'>Number of Doors</FormLabel>
-                <RadioGroup 
+                <FormLabel id='door-configuration'>Number of Doors</FormLabel>
+                <RadioGroup
                     row
                     aria-labelledby="door-configuration"
                     defaultValue="2 Door"
@@ -62,6 +62,18 @@ function VehicleForm() {
                 >
                     <FormControlLabel value="2Dr" control={<Radio />} label="2 Door" />
                     <FormControlLabel value="4Dr" control={<Radio />} label="4 Door" />
+                </RadioGroup>
+            </FormControl>
+            <FormControl sx={{ minWidth: 500, m: 1 }}>
+                <FormLabel id='sasquatch-indication'>Option Packages</FormLabel>
+                <RadioGroup
+                    row
+                    aria-labelledby="sasquatch-package-indication"
+                    defaultValue="non-sas"
+                    name="radio-buttons-group-2"
+                >
+                    <FormControlLabel value="non-sas" control={<Radio />} label="Non-Sasquatch" />
+                    <FormControlLabel value="sas" control={<Radio />} label="Sasquatch" />
                 </RadioGroup>
             </FormControl>
 

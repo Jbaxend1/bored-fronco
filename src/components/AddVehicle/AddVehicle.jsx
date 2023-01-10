@@ -12,7 +12,8 @@ function AddVehicle() {
 
     return (
         <div>
-            <h1 aria-label="Add Vehicle Form Page" >Add Your Vehicle</h1>
+            <h1 aria-label="Add Vehicle Form Pazge" >Add Your Vehicle</h1>
+
             <VehicleForm />
         </div>
     );
