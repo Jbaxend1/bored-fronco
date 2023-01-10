@@ -4,6 +4,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
 import myLogo from '../../../src/img/newLogo.png';
+import NavBar from '../NavBar/NavBar';
 
 
 
@@ -12,10 +13,14 @@ function Nav() {
 
   return (
     <div className="nav">
+      
+
       <Link to="/home">
         <h1 aria-label="Page Title - Bored Fronco" className="nav-title">Bored Fronco</h1>
         <img src={myLogo} alt='Bored Fronco Logo' width={250} height={150} />
       </Link>
+
+      <NavBar user={user}/>
 
       <div>
         {/* If no user is logged in, show these links */}
@@ -44,6 +49,7 @@ function Nav() {
         </Link>
 
         <LogOutButton />
+        
       </div>
     </div>
   );

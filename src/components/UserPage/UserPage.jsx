@@ -39,6 +39,7 @@ function UserPage() {
               <CardMedia
                 component="img"
                 height="500"
+                sx={{ minHeight: 650 }}
                 image="https://images.unsplash.com/photo-1653367963903-ba0d38d3843c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80"
               />
             </Box>
