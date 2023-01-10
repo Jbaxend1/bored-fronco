@@ -8,8 +8,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { IconButton, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
@@ -20,6 +18,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { minWidth } from '@mui/system';
 
 
 function NavBar({ user }) {
@@ -53,32 +52,56 @@ function NavBar({ user }) {
 
     return (
         <>
-            <IconButton size='large' onClick={() => setDrawerOpen(true)}>
-                <MenuIcon />
+            <IconButton size='large' role={'menu'} aria-label="Navigation Menu" onClick={() => setDrawerOpen(true)}>
+                <MenuIcon/>
             </IconButton>
             <Drawer
+                sx={{ }}
                 anchor='left'
                 open={drawerOpen}
                 onClose={() => setDrawerOpen(false)}
+                PaperProps={{
+                    sx: {
+                        elevation: "14",
+                        backgroundColor: "#525456"
+                    }
+                }}
             >
                 <Box
-                    sx={{ width: 250, textAlign: 'center' }}
+                    sx={{ width: 300, textAlign: 'center'}}
                     role='presentation'
                     onClick={() => setDrawerOpen(false)}
                     onKeyDown={() => setDrawerOpen(false)}
                 >
-                    <Typography variant='h6'>
+                    <Typography variant='h4' color={'white'} padding={'12px'}>
                         Menu
                     </Typography>
-                    <Divider />
-                    <List>
+                    <Divider sx={{ backgroundColor: 'white', marginTop: 3}}/>
+                    <List
+                        sx={{
+                            // selected and (selected + hover) states
+                            '&& .Mui-selected, && .Mui-selected:hover': {
+                                bgcolor: 'red',
+                                '&, & .MuiListItemIcon-root': {
+                                    color: 'pink',
+                                },
+                            },
+                            // hover states
+                            '& .MuiListItemButton-root:hover': {
+                                bgcolor: '#f3be2d',
+                                '&, & .MuiListItemIcon-root': {
+                                    color: '#525456',
+                                },
+                            },
+                        }}
+                    >
                         {itemsList.map((item, index) => {
                             const { text, icon, onClick } = item;
                             return (
-                                <ListItem key={text} onClick={onClick}>
-                                    <ListItemText primary={text} />
-                                    <ListItemButton>
-                                        {icon && <ListItemIcon>{icon}</ListItemIcon>}
+                                <ListItem key={text} onClick={onClick} >
+                                    <ListItemText sx={{ color: 'white'}} primary={text} />
+                                    <ListItemButton sx={{  display: 'flex', justifyContent: 'flex-end', maxWidth: 90}}>
+                                        {icon && <ListItemIcon sx={{ color: 'white'}}>{icon}</ListItemIcon>}
                                     </ListItemButton>
                                 </ListItem>
                             )
