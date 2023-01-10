@@ -9,6 +9,18 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#535353'
+        }
+    },
+    shape: {
+        borderRadius: 10
+    },
+})
 
 function VehicleForm() {
 
@@ -16,9 +28,10 @@ function VehicleForm() {
     const [trim, setTrim] = useState('');
 
     return (
-        <Box sx={{}}>
-            <FormControl sx={{ minWidth: 500, m: 1 }}>
-                <InputLabel id="year-input">Year</InputLabel>
+        <ThemeProvider theme={theme}>
+            <Box sx={{}}>
+            <FormControl sx={{ minWidth: 500, m: 1, color: '#f3be2d' }}>
+                <InputLabel id="year-input"  sx={{}}>Year</InputLabel>
                 <Select
                     labelId="year-input"
                     id="year-select"
@@ -78,6 +91,8 @@ function VehicleForm() {
             </FormControl>
 
         </Box>
+        </ThemeProvider>
+        
     );
 }
 
