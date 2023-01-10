@@ -1,4 +1,5 @@
 import React from 'react';
+import myLogo from '../../../src/img/logo.png';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -9,7 +10,7 @@ function InfoPage() {
   return (
     <div className="container">
       <p>Info Page</p>
-      <img src='/public/images/logo.png' alt='Bored Fronco Logo' />
+      <img src={myLogo} alt='Bored Fronco Logo' />
 
     </div>
   );

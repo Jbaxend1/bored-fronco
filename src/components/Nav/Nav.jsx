@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import { useSelector } from 'react-redux';
+import myLogo from '../../../src/img/newLogo.png';
+
 
 
 function Nav() {
@@ -12,7 +14,9 @@ function Nav() {
     <div className="nav">
       <Link to="/home">
         <h1 aria-label="Page Title - Bored Fronco" className="nav-title">Bored Fronco</h1>
+        <img src={myLogo} alt='Bored Fronco Logo' width={250} height={150} />
       </Link>
+
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (
@@ -32,14 +36,14 @@ function Nav() {
             <Link className="navLink" to="/info">
               Info Page
             </Link>
-
-            <LogOutButton className="navLink" />
           </>
         )}
 
         <Link className="navLink" to="/about">
           About
         </Link>
+
+        <LogOutButton />
       </div>
     </div>
   );
