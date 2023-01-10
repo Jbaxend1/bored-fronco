@@ -52,8 +52,8 @@ function NavBar({ user }) {
 
     return (
         <>
-            <IconButton size='large' role={'menu'} aria-label="Navigation Menu" onClick={() => setDrawerOpen(true)}>
-                <MenuIcon/>
+            <IconButton sx={{ minWidth: 85, marginLeft: '25px'}} role={'menu'} aria-label="Navigation Menu" onClick={() => setDrawerOpen(true)}>
+                <MenuIcon fontSize='large' sx={{ color: 'white'}}/>
             </IconButton>
             <Drawer
                 sx={{ }}

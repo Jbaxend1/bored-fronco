@@ -5,6 +5,8 @@ import './Nav.css';
 import { useSelector } from 'react-redux';
 import myLogo from '../../../src/img/newLogo.png';
 import NavBar from '../NavBar/NavBar';
+import Avatar from '@mui/material/Avatar';
+
 
 
 
@@ -13,44 +15,21 @@ function Nav() {
 
   return (
     <div className="nav">
-      
-
-      <Link to="/home">
-        <h1 aria-label="Page Title - Bored Fronco" className="nav-title">Bored Fronco</h1>
-        <img src={myLogo} alt='Bored Fronco Logo' width={250} height={150} />
-      </Link>
-
-      <NavBar user={user}/>
-
-      <div>
-        {/* If no user is logged in, show these links */}
-        {!user.id && (
-          // If there's no user, show login/registration links
-          <Link className="navLink" to="/login">
-            Login / Register
-          </Link>
-        )}
-
-        {/* If a user is logged in, show these links */}
-        {user.id && (
-          <>
-            <Link className="navLink" to="/user">
-              Home
-            </Link>
-
-            <Link className="navLink" to="/info">
-              Info Page
-            </Link>
-          </>
-        )}
-
-        <Link className="navLink" to="/about">
-          About
-        </Link>
-
-        <LogOutButton />
-        
+      <div className='nav-menu'>
+        <Avatar variant="circular" src={user.profile_pic} sx={{ width: 85, height: 85,  marginRight: 3, marginLeft: 3 }} />
+        <h2 style={{ display: 'flex', justifyContent: 'center', color: 'white' }}>Welcome, {user.username}!</h2>
+        <NavBar user={user} />
       </div>
+      <div className='nav-logo'>
+        <Link to="/home">
+          <h1 aria-label="Page Title - Bored Fronco" className="nav-title">Bored Fronco</h1>
+          <img src={myLogo} alt='Bored Fronco Logo' width={250} height={150} />
+        </Link>
+      </div>
+
+
+
+
     </div>
   );
 }

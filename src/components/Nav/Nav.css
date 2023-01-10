@@ -2,10 +2,21 @@
   /* flex box layout */
   display: flex;
   align-items: center;
-
+  justify-content: space-evenly;
   margin: 0 0 30px;
   background-color: #525456;
   overflow: hidden;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  padding-right: 1200px;
 }
 
 .nav a {

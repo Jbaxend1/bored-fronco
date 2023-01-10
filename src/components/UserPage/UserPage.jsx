@@ -11,6 +11,8 @@ import { CardActionArea } from '@mui/material';
 import { Box, maxWidth } from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 
+
+
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
@@ -23,10 +25,10 @@ function UserPage() {
 
   return (
     <div className="container">
-      <h2 style={{ display: 'flex', justifyContent: 'center' }}>Welcome, {user.username}!</h2>
+      
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '12px' }}>
         <div>
-          <Avatar variant="circular" src={user.profile_pic} sx={{ width: 135, height: 135, marginBottom: 3 }} />
+          
         </div>
         <div>
           <Typography variant='h3' sx={{ paddingLeft: 12 }}>Let's get started by adding a pony to your stable!</Typography>

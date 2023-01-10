@@ -16,7 +16,6 @@ function LandingPage() {
 
   return (
     <div className="container">
-      <img src={"/public/images/logo.png"} width='200' height={'200'} alt='Bored Fronco Logo' />
 
       <h2>{heading}</h2>
       <p>A place where Bronco enthusiasts can come together to track and share their modifications and ownership journey.</p>
