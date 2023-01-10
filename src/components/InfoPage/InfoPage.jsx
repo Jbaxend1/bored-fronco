@@ -9,6 +9,8 @@ function InfoPage() {
   return (
     <div className="container">
       <p>Info Page</p>
+      <img src='/public/images/logo.png' alt='Bored Fronco Logo' />
+
     </div>
   );
 }

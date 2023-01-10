@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory, Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import { useSelector } from 'react-redux';
 import { Avatar, Divider, Chip } from '@mui/material';
@@ -13,20 +14,27 @@ import AddIcon from '@mui/icons-material/Add';
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
+
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push('/add-vehicle');
+  }
+
   return (
     <div className="container">
-      <h2 style={{ display: 'flex', justifyContent: 'center'}}>Welcome, {user.username}!</h2>
+      <h2 style={{ display: 'flex', justifyContent: 'center' }}>Welcome, {user.username}!</h2>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '12px' }}>
         <div>
-        <Avatar variant="circular" src={user.profile_pic} sx={{ width: 135, height: 135, marginBottom: 3 }} />
+          <Avatar variant="circular" src={user.profile_pic} sx={{ width: 135, height: 135, marginBottom: 3 }} />
         </div>
         <div>
-        <Typography variant='h3' sx={{ paddingLeft: 12}}>Let's get started by adding a pony to your stable!</Typography>
+          <Typography variant='h3' sx={{ paddingLeft: 12 }}>Let's get started by adding a pony to your stable!</Typography>
         </div>
       </div>
-      <div style={{ paddingBottom: '25px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-        <Card className="card" elevation="15" sx={{ backgroundColor: 'rgb(222, 222, 222)', borderRadius: '67px' }}>
-          <CardActionArea>
+      <div style={{ paddingBottom: '25px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <Card className="card" elevation={15} sx={{ backgroundColor: 'rgb(222, 222, 222)', borderRadius: '67px' }}>
+          <CardActionArea onClick={handleClick}>
             <Box sx={{ position: 'relative' }}>
               <CardMedia
                 component="img"
@@ -48,7 +56,6 @@ function UserPage() {
               <AddIcon fontSize='large' sx={{ paddingRight: '12px' }} />
               <Typography variant='h5'>Add Your Bronco...</Typography>
             </Box>
-
           </CardActionArea>
         </Card>
       </div>
