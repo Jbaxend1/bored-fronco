@@ -16,7 +16,8 @@ function Footer() {
   const user = useSelector((store) => store.user);
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'center'}}>
+      <div className='container'>
+      <div class="footer-content" style={{ display: 'flex', justifyContent: 'center'}}>
         {/* If no user is logged in, show these links */}
         {!user.id && (
           // If there's no user, show login/registration links
@@ -42,10 +43,14 @@ function Footer() {
           About
         </Link>
 
-        <LogOutButton />
+        <LogOutButton className="navLink" />
 
       </div>
+      <div className='footer-logo'>
       <footer>&copy; JMBaxendell</footer>
+      </div>
+      </div>
+      
 
     </>
   )
